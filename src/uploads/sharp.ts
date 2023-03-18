@@ -1,13 +1,13 @@
 'use strict';
 
-const Sharp = require('./constructor');
-require('./input')(Sharp);
-require('./resize')(Sharp);
-require('./composite')(Sharp);
-require('./operation')(Sharp);
-require('./colour')(Sharp);
-require('./channel')(Sharp);
-require('./output')(Sharp);
-require('./utility')(Sharp);
+const Sharp = require('./sharp/constructor');
+require('./sharp/input')(Sharp);
+require('./sharp/resize')(Sharp);
+require('./sharp/composite')(Sharp);
+require('./sharp/operation')(Sharp);
+require('./sharp/colour')(Sharp);
+require('./sharp/channel')(Sharp);
+require('./sharp/output')(Sharp);
+require('./sharp/utility')(Sharp);
 
 module.exports = Sharp;
