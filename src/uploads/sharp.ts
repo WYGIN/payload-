@@ -1,28 +1,4 @@
-interface Options {
-  failOn: 'none' | 'truncated' | 'error' | 'warning' = 'warning';
-  limitInputPixels: number | boolean = 268402689;
-  unlimited: boolean = false;
-  sequentialRead: boolean = false;
-  density: number = 72;
-  pages: number = 1;
-  page: number = 0;
-  subifd: number = -1;
-  level: number = 0;
-  animated: boolean = false;
-  raw = {
-    width: number;
-    height: number;
-    channels: number;
-    premultiplied: boolean = false;
-  };
-  create = {
-    width: number;
-    height: number;
-    channels: number;
-    background: string | Object;
-    noise: {
-      type: string = 'gaussian';
-      mean: number;
+
       sigma: number;
     }
   };
