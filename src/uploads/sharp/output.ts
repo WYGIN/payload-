@@ -1,8 +1,9 @@
 'use strict'; 
   
- const path = require('path'); 
- const is = require('./is'); 
- const sharp = require('./sharp'); 
+ import path from 'path'; 
+ import is from './is'; 
+ import sharp from './sharp'; 
+ import { loadImage } from './vips';
   
  const formats = new Map([ 
    ['heic', 'heif'], 
@@ -152,8 +153,44 @@
    } else if (this.options.resolveWithObject) { 
      this.options.resolveWithObject = false; 
    } 
-   this.options.fileOut = ''; 
-   return this._pipeline(is.fn(options) ? options : callback); 
+   this.options.fileOut = '';
+   let err;
+   try {
+     let image = loadImage(this.options.input);
+     image.premultiplied();
+     const width = image.width();
+     const height = image.height();
+     const channels = image.bands();
+     const webp = image.webpsaveBuffer({
+       strip: false,
+       Q: 80,
+       lossless: false,
+       near_lossless: false,
+       smart_subsample: false,
+       effort: 4,
+       min_size: false,
+       mixed: false,
+       alpha_q: 100
+     });
+     const data = webp.data;
+     const size = webp.length;
+     const info = {
+       width;
+       height;
+       channels;
+       size;
+       premultiplied: boolean = true;
+     }
+   } catch (e) {
+     err.value = e;
+   }
+   return new Promise((resolve, reject) => {
+     if(err.bool)
+       reject(err.value);
+     else
+       resolve({data, info});
+   });
+   //return this._pipeline(is.fn(options) ? options : callback); 
  } 
   
  /** 
