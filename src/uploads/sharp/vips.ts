@@ -1,5 +1,8 @@
 import Vips from 'wasm-vips';
 let img;
+(async() => {
+  img = await Vips().Image;
+})();
 export const loadImage = (opt) => {
   let image;
   if(opt.isBuffer) {
@@ -9,7 +12,9 @@ export const loadImage = (opt) => {
         image.unpremultiply();
       }
     } else {
-      
+      image = img.newFromBuffer(opt.buffer, opt.bufferLength, null, {access: opt.access, fail_on: opt.failOn });
     }
+  } else {
+    image = img.newFromFile(opt.file ,{access: opt.access, fail_on: opt.failOn });
   }
 }
