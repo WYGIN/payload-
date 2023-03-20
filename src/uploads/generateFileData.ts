@@ -2,7 +2,7 @@ import { fromBuffer } from 'file-type';
 import mkdirp from 'mkdirp';
 import path from 'path';
 import sanitize from 'sanitize-filename';
-//import sharp, { Sharp } from 'sharp';
+import sharp, { Sharp } from './sharp';
 import { Collection } from '../collections/config/types';
 import { SanitizedConfig } from '../config/types';
 import { FileUploadError, MissingFile } from '../errors';
@@ -80,7 +80,7 @@ export const generateFileData = async <T>({
     let fileBuffer;
     let ext;
     let mime: string;
-/*
+//
     const sharpOptions: sharp.SharpOptions = {};
 
     if (fileIsAnimated) sharpOptions.animated = true;
@@ -100,13 +100,13 @@ export const generateFileData = async <T>({
         originalFile = originalFile.toFormat(formatOptions.format, formatOptions.options);
       }
     }
-*/
+//
     if (isImage(file.mimetype)) {
       dimensions = await getImageSize(file);
       fileData.width = dimensions.width;
       fileData.height = dimensions.height;
     }
-/*
+//
     if (originalFile) {
       fileBuffer = await originalFile.toBuffer({ resolveWithObject: true });
       ({ mime, ext } = await fromBuffer(fileBuffer.data));
@@ -118,7 +118,7 @@ export const generateFileData = async <T>({
       fileData.filesize = file.size;
       ext = file.name.split('.').pop();
     }
-*/
+//
     // Adust SVG mime type. fromBuffer modifies it.
     if (mime === 'application/xml' && ext === 'svg') mime = 'image/svg+xml';
     fileData.mimeType = mime;
