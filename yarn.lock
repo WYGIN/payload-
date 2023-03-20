@@ -11972,6 +11972,11 @@ warning@^4.0.2:
   dependencies:
     loose-envify "^1.0.0"
 
+wasm-vips@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/wasm-vips/-/wasm-vips-0.0.4.tgz#ce8a0588a7ee8e4d7ce024f23037393a1fafff38"
+  integrity sha512-CKdFltshdB6yYOLdmUaXslMe8OgBMKkKGh104/7flHgsQCM3qq5MbQLRhgwmzOoBTgXBLOJHw9bsAprjH/l6fA==
+
 watchpack@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-2.4.0.tgz#fa33032374962c78113f93c7f2fb4c54c9862a5d"
