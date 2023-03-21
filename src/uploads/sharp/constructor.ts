@@ -160,8 +160,8 @@
   * @param {number} [options.text.spacing=0] - text line height in points. Will use the font line height if none is specified. 
   * @returns {Sharp} 
   * @throws {Error} Invalid parameters 
-  */ 
- const Sharp = function (input, options) { 
+  */ 
+export const Sharp = function (input, options) { 
    if (arguments.length === 1 && !is.defined(input)) { 
      throw new Error('Invalid input'); 
    } 
