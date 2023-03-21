@@ -357,7 +357,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid parameters 
  */ 
- function extend (extend) { 
+/* function extend (extend) { 
    if (is.integer(extend) && extend > 0) { 
      this.options.extendTop = extend; 
      this.options.extendBottom = extend; 
@@ -398,7 +398,7 @@
    } 
    return this; 
  } 
-  
+ */
  /** 
   * Extract/crop a region of the image. 
   * 
@@ -429,7 +429,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid parameters 
   */ 
- function extract (options) { 
+/* function extract (options) { 
    const suffix = isResizeExpected(this.options) || this.options.widthPre !== -1 ? 'Post' : 'Pre'; 
    if (this.options[`width${suffix}`] !== -1) { 
      this.options.debuglog('ignoring previous extract options'); 
@@ -450,7 +450,7 @@
    } 
    return this; 
  } 
-  
+  */
  /** 
   * Trim pixels from all edges that contain values similar to the given background colour, which defaults to that of the top-left pixel. 
   * 
@@ -499,7 +499,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid parameters 
   */ 
- function trim (trim) { 
+/* function trim (trim) { 
    if (!is.defined(trim)) { 
      this.options.trimThreshold = 10; 
    } else if (is.string(trim)) { 
@@ -521,14 +521,14 @@
        throw is.invalidParameterError('threshold', 'positive number', trim); 
      } 
    } else { 
-     throw is.invalidParameterError('trim', 'string, number or object', trim); 
-   } 
+     throw is.invalidParameterError('trim', 'string, number or object', trim); 
+   } 
    if (isRotationExpected(this.options)) { 
      this.options.rotateBeforePreExtract = true; 
    } 
    return this; 
  } 
-  
+  */
  /** 
   * Decorate the Sharp prototype with resize-related functions. 
   * @private 
@@ -536,9 +536,9 @@
  module.exports = function (Sharp) { 
    Object.assign(Sharp.prototype, { 
      resize, 
-     extend, 
-     extract, 
-     trim 
+  //   extend, 
+  //   extract, 
+  //   trim 
    }); 
    // Class attributes 
    Sharp.gravity = gravity; 
