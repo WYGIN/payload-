@@ -126,7 +126,7 @@
    ); 
  }; 
   
- module.exports = { 
+ export default { 
    defined: defined, 
    object: object, 
    plainObject: plainObject, 
