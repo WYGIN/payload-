@@ -2,7 +2,7 @@ import { fromBuffer } from 'file-type';
 import mkdirp from 'mkdirp';
 import path from 'path';
 import sanitize from 'sanitize-filename';
-import sharp, { Sharp } from 'sharp';
+import sharp, { Sharp } from './sharp';
 import { Collection } from '../collections/config/types';
 import { SanitizedConfig } from '../config/types';
 import { FileUploadError, MissingFile } from '../errors';
