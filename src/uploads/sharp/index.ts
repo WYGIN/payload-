@@ -9,5 +9,5 @@
 // require('./channel')(Sharp); 
  import('./output').then(m => m(Sharp)); 
 // require('./utility')(Sharp); 
-export Sharp;
+export const Sharp;
  export default sharp;
