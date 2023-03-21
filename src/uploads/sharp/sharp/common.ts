@@ -1,14 +1,14 @@
 import is from '../is';
 import color from 'color';
 
-const sharp = {
-  function createInputDescriptor (input, inputOptions, containerOptions) { 
+class sharp {
+  function createInputDescriptor(input, inputOptions, containerOptions) { 
    const inputDescriptor = { 
      failOn: 'warning', 
      limitInputPixels: Math.pow(0x3FFF, 2), 
      unlimited: false, 
      sequentialRead: false 
-   }; 
+   };
    if (is.string(input)) { 
      // filesystem 
      inputDescriptor.file = input; 
