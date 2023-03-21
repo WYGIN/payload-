@@ -1,4 +1,4 @@
-function stats(options, function(err, stats) => {}) {
+function stats(options, (err, stats) => {}) {
   return {};
 }
 
