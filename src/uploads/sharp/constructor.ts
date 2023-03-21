@@ -405,7 +405,7 @@
   * 
   * @returns {Sharp} 
   */ 
- function clone () { 
+ /*function clone () { 
    // Clone existing options 
    const clone = this.constructor.call(); 
    clone.options = Object.assign({}, this.options); 
@@ -421,7 +421,7 @@
    return clone; 
  } 
  Object.assign(Sharp.prototype, { clone }); 
-  
+  */
  /** 
   * Export constructor. 
   * @private 
