@@ -175,11 +175,11 @@
      const data = webp.data;
      const size = webp.length;
      const info = {
-       width;
-       height;
-       channels;
-       size;
-       premultiplied: boolean = true;
+       width,
+       height,
+       channels,
+       size,
+       premultiplied: boolean = true
      }
    } catch (e) {
      err.value = e;
