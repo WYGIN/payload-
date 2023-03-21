@@ -1,6 +1,6 @@
 'use strict'; 
   
- const Sharp = require('./constructor'); 
+ export const Sharp = import('./constructor'); 
 // require('./input')(Sharp); 
  import('./resize').then(m => m(Sharp)); 
  //require('./composite')(Sharp); 
