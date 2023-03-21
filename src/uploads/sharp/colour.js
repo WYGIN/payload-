@@ -1,7 +1,7 @@
 'use strict'; 
   
- const color = require('color'); 
- const is = require('./is'); 
+ import color from 'color'; 
+ import is from './is'; 
   
  /** 
   * Colourspaces. 
@@ -160,8 +160,8 @@
  /** 
   * Decorate the Sharp prototype with colour-related functions. 
   * @private 
-  */ 
- module.exports = function (Sharp) { 
+  */ 
+export default function (Sharp) { 
    Object.assign(Sharp.prototype, { 
      // Public 
      tint, 
