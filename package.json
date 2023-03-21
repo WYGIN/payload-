@@ -1,6 +1,6 @@
 {
   "name": "wygininc",
-  "version": "1.6.20",
+  "version": "1.6.20.0",
   "description": "Node, React and MongoDB Headless CMS and Application Framework",
   "license": "MIT",
   "engines": {
