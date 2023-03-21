@@ -1,4 +1,4 @@
-function stats(options, (err, stats) => {}) {
+function stats(options, callback: (err, stats) => {}) {
   return {};
 }
 
