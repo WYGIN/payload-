@@ -1,7 +1,8 @@
 import Vips from 'wasm-vips';
 let img;
 (async() => {
-  img = await Vips().Image;
+  const vi = await Vips();
+  img = vi.Image;
 })();
 export const loadImage = (opt) => {
   let image;
