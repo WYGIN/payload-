@@ -2,7 +2,7 @@ import { UploadedFile } from 'express-fileupload';
 import { fromBuffer } from 'file-type';
 import fs from 'fs';
 import sanitize from 'sanitize-filename';
-import sharp from 'sharp';
+import sharp from './sharp';
 import { SanitizedCollectionConfig } from '../collections/config/types';
 import { PayloadRequest } from '../express/types';
 import fileExists from './fileExists';
