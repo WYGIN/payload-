@@ -1,13 +1,16 @@
 'use strict'; 
   
- const sharp, { Sharp } = import('./constructor'); 
+ import sharp, { Sharp } from './constructor'; 
 // require('./input')(Sharp); 
- import('./resize').then(m => m(Sharp)); 
+ import resize from './resize';
+ resize(Sharp);
  //require('./composite')(Sharp); 
 // require('./operation')(Sharp); 
- import('./colour').then(m => m(Sharp)); 
+ import color from './colour';
+ color(Sharp);
 // require('./channel')(Sharp); 
- import('./output').then(m => m(Sharp)); 
+ import output from './output';
+ output(Sharp);
 // require('./utility')(Sharp); 
 export const Sharp;
  export default sharp;
