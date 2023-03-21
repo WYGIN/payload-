@@ -66,7 +66,7 @@
   * @returns {Promise<Object>} - when no callback is provided 
   * @throws {Error} Invalid parameters 
   */ 
- function toFile (fileOut, callback) { 
+ /*function toFile (fileOut, callback) { 
    let err; 
    if (!is.string(fileOut)) { 
      err = new Error('Missing output file path'); 
@@ -87,7 +87,7 @@
    } 
    return this; 
  } 
-  
+ */ 
  /** 
   * Write output to a Buffer. 
   * JPEG, PNG, WebP, AVIF, TIFF, GIF and raw pixel data output are supported. 
@@ -235,7 +235,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid parameters 
   */ 
- function withMetadata (options) { 
+/* function withMetadata (options) { 
    this.options.withMetadata = is.bool(options) ? options : true; 
    if (is.object(options)) { 
      if (is.defined(options.orientation)) { 
@@ -281,7 +281,7 @@
    } 
    return this; 
  } 
-  
+*/  
  /** 
   * Force output to a given format. 
   * 
@@ -339,7 +339,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid options 
   */ 
- function jpeg (options) { 
+/* function jpeg (options) { 
    if (is.object(options)) { 
      if (is.defined(options.quality)) { 
        if (is.integer(options.quality) && is.inRange(options.quality, 1, 100)) { 
@@ -400,7 +400,7 @@
    } 
    return this._updateFormatOut('jpeg', options); 
  } 
-  
+*/  
  /** 
   * Use these PNG options for output image. 
   * 
@@ -434,7 +434,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid options 
   */ 
- function png (options) { 
+/* function png (options) { 
    if (is.object(options)) { 
      if (is.defined(options.progressive)) { 
        this._setBooleanOption('pngProgressive', options.progressive); 
@@ -488,7 +488,7 @@
    } 
    return this._updateFormatOut('png', options); 
  } 
-  
+*/  
  /** 
   * Use these WebP options for output image. 
   * 
@@ -519,7 +519,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid options 
   */ 
- function webp (options) { 
+ /*function webp (options) { 
    if (is.object(options)) { 
      if (is.defined(options.quality)) { 
        if (is.integer(options.quality) && is.inRange(options.quality, 1, 100)) { 
@@ -561,7 +561,7 @@
    trySetAnimationOptions(options, this.options); 
    return this._updateFormatOut('webp', options); 
  } 
-  
+*/  
  /** 
   * Use these GIF options for the output image. 
   * 
@@ -610,7 +610,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid options 
   */ 
- function gif (options) { 
+/* function gif (options) { 
    if (is.object(options)) { 
      if (is.defined(options.reoptimise)) { 
        this._setBooleanOption('gifReoptimise', options.reoptimise); 
@@ -657,7 +657,7 @@
    trySetAnimationOptions(options, this.options); 
    return this._updateFormatOut('gif', options); 
  } 
-  
+*/  
  /** 
   * Use these JP2 options for output image. 
   * 
@@ -692,7 +692,7 @@
   * @throws {Error} Invalid options 
   */ 
  /* istanbul ignore next */ 
- function jp2 (options) { 
+/* function jp2 (options) { 
    if (!this.constructor.format.jp2k.output.buffer) { 
      throw errJp2Save(); 
    } 
@@ -735,7 +735,7 @@
    } 
    return this._updateFormatOut('jp2', options); 
  } 
-  
+*/  
  /** 
   * Set animation options if available. 
   * @private 
@@ -746,7 +746,7 @@
   * @param {Object} [target] - target object for valid options 
   * @throws {Error} Invalid options 
   */ 
- function trySetAnimationOptions (source, target) { 
+/* function trySetAnimationOptions (source, target) { 
    if (is.object(source) && is.defined(source.loop)) { 
      if (is.integer(source.loop) && is.inRange(source.loop, 0, 65535)) { 
        target.loop = source.loop; 
@@ -768,7 +768,7 @@
      } 
    } 
  } 
-  
+*/  
  /** 
   * Use these TIFF options for output image. 
   * 
@@ -800,7 +800,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid options 
   */ 
- function tiff (options) { 
+/* function tiff (options) { 
    if (is.object(options)) { 
      if (is.defined(options.quality)) { 
        if (is.integer(options.quality) && is.inRange(options.quality, 1, 100)) { 
@@ -880,7 +880,7 @@
    } 
    return this._updateFormatOut('tiff', options); 
  } 
-  
+*/  
  /** 
   * Use these AVIF options for output image. 
   * 
@@ -909,10 +909,10 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid options 
   */ 
- function avif (options) { 
+/* function avif (options) { 
    return this.heif({ ...options, compression: 'av1' }); 
  } 
-  
+ */ 
  /** 
   * Use these HEIF options for output image. 
   * 
@@ -935,7 +935,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid options 
   */ 
- function heif (options) { 
+ /*function heif (options) { 
    if (is.object(options)) { 
      if (is.defined(options.quality)) { 
        if (is.integer(options.quality) && is.inRange(options.quality, 1, 100)) { 
@@ -975,7 +975,7 @@
    } 
    return this._updateFormatOut('heif', options); 
  } 
-  
+*/  
  /** 
   * Use these JPEG-XL (JXL) options for output image. 
   * 
@@ -998,7 +998,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid options 
   */ 
- function jxl (options) { 
+/* function jxl (options) { 
    if (is.object(options)) { 
      if (is.defined(options.quality)) { 
        if (is.integer(options.quality) && is.inRange(options.quality, 1, 100)) { 
@@ -1040,7 +1040,7 @@
    } 
    return this._updateFormatOut('jxl', options); 
  } 
-  
+*/  
  /** 
   * Force output to be raw, uncompressed pixel data. 
   * Pixel ordering is left-to-right, top-to-bottom, without padding. 
@@ -1065,7 +1065,7 @@
   * @param {string} [options.depth='uchar'] - bit depth, one of: char, uchar (default), short, ushort, int, uint, float, complex, double, dpcomplex 
   * @throws {Error} Invalid options 
   */ 
- function raw (options) { 
+ /*function raw (options) { 
    if (is.object(options)) { 
      if (is.defined(options.depth)) { 
        if (is.string(options.depth) && is.inArray(options.depth, 
@@ -1079,7 +1079,7 @@
    } 
    return this._updateFormatOut('raw'); 
  } 
-  
+*/  
  /** 
   * Use tile-based deep zoom (image pyramid) output. 
   * 
@@ -1126,7 +1126,7 @@
   * @returns {Sharp} 
   * @throws {Error} Invalid parameters 
   */ 
- function tile (options) { 
+/* function tile (options) { 
    if (is.object(options)) { 
      // Size of square tiles, in pixels 
      if (is.defined(options.size)) { 
@@ -1221,7 +1221,7 @@
    } 
    return this._updateFormatOut('dz'); 
  } 
-  
+*/  
  /** 
   * Set a timeout for processing, in seconds. 
   * Use a value of zero to continue processing indefinitely, the default behaviour. 
@@ -1246,7 +1246,7 @@
   * @param {number} options.seconds - Number of seconds after which processing will be stopped 
   * @returns {Sharp} 
   */ 
- function timeout (options) { 
+/* function timeout (options) { 
    if (!is.plainObject(options)) { 
      throw is.invalidParameterError('options', 'object', options); 
    } 
@@ -1257,7 +1257,7 @@
    } 
    return this; 
  } 
-  
+*/  
  /** 
   * Update the output format unless options.force is false, 
   * in which case revert to input format. 
@@ -1267,13 +1267,13 @@
   * @param {boolean} [options.force=true] - force output format, otherwise attempt to use input format 
   * @returns {Sharp} 
   */ 
- function _updateFormatOut (formatOut, options) { 
+/* function _updateFormatOut (formatOut, options) { 
    if (!(is.object(options) && options.force === false)) { 
      this.options.formatOut = formatOut; 
    } 
    return this; 
  } 
-  
+*/  
  /** 
   * Update a boolean attribute of the this.options Object. 
   * @private 
@@ -1293,20 +1293,20 @@
   * Called by a WriteableStream to notify us it is ready for data. 
   * @private 
   */ 
- function _read () { 
+/*/ function _read () { 
    /* istanbul ignore else */ 
-   if (!this.options.streamOut) { 
+/*   if (!this.options.streamOut) { 
      this.options.streamOut = true; 
      this._pipeline(); 
    } 
  } 
-  
+  */
  /** 
   * Invoke the C++ image processing pipeline 
   * Supports callback, stream and promise variants 
   * @private 
   */ 
- function _pipeline (callback) { 
+/* function _pipeline (callback) { 
    if (typeof callback === 'function') { 
      // output=file/buffer 
      if (this._isStreamInput()) { 
@@ -1392,7 +1392,7 @@
      } 
    } 
  } 
-  
+  */
  /** 
   * Decorate the Sharp prototype with output-related functions. 
   * @private 
@@ -1400,11 +1400,11 @@
  module.exports = function (Sharp) { 
    Object.assign(Sharp.prototype, { 
      // Public 
-     toFile, 
+  //   toFile, 
      toBuffer, 
-     withMetadata, 
+  //   withMetadata, 
      toFormat, 
-     jpeg, 
+ /*    jpeg, 
      jp2, 
      png, 
      webp, 
@@ -1415,11 +1415,11 @@
      gif, 
      raw, 
      tile, 
-     timeout, 
+     timeout, */
      // Private 
-     _updateFormatOut, 
+  //   _updateFormatOut, 
      _setBooleanOption, 
-     _read, 
-     _pipeline 
+  //   _read, 
+ //    _pipeline 
    }); 
  };
