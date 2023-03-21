@@ -1,10 +1,10 @@
 import('./common');
 import is from '../is';
 
-function metadata(options, function(err, metadata) => {
-  
+function metadata(options, (err, metadata) => {
+  return {};
 }) {
-  
+  return {};
 }
 
 
