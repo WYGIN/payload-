@@ -1397,7 +1397,7 @@
   * Decorate the Sharp prototype with output-related functions. 
   * @private 
   */ 
- module.exports = function (Sharp) { 
+ export default function (Sharp) { 
    Object.assign(Sharp.prototype, { 
      // Public 
   //   toFile, 
