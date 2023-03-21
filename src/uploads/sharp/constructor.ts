@@ -430,8 +430,8 @@ export const Sharp = function (input, options) {
       if (arguments.length === 1 && !is.defined(input)) {  
       throw new Error('Invalid input');  
     }  
-    if (!(this instanceof Sharp)) {  
-      return new Sharp(input, options);  
+    if (!(this instanceof sharp)) {  
+      return new sharp(input, options);  
     }  
     stream.Duplex.call(this);  
     this.options = {  
