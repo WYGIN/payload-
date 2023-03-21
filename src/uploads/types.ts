@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import express from 'express';
 import serveStatic from 'serve-static';
-import { Sharp, ResizeOptions } from 'sharp';
+import { Sharp, ResizeOptions } from './sharp';
 
 export type FileSize = {
   filename: string;
