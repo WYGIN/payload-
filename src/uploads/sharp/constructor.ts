@@ -1,13 +1,13 @@
 'use strict'; 
   
- const util = require('util'); 
- const stream = require('stream'); 
- const is = require('./is'); 
+ import util from 'util'; 
+ import stream from 'stream'; 
+ import is from './is'; 
   
- require('./libvips').hasVendoredLibvips(); 
- require('./sharp'); 
+// require('./libvips').hasVendoredLibvips(); 
+ import('./sharp'); 
   
- // Use NODE_DEBUG=sharp to enable libvips warnings 
+ // Use NODE_DEBUG=sharp to enable libvips warnings 
  const debuglog = util.debuglog('sharp'); 
   
  /** 
@@ -426,4 +426,4 @@
   * Export constructor. 
   * @private 
   */ 
- module.exports = Sharp;
+ export default Sharp;
