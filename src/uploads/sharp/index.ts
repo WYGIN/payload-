@@ -1,6 +1,6 @@
 'use strict'; 
   
- import sharp, { Sharp } from './constructor'; 
+ export sharp, { Sharp } from './constructor'; 
 // require('./input')(Sharp); 
  import resize from './resize';
  resize(Sharp);
@@ -12,5 +12,5 @@
  import output from './output';
  output(Sharp);
 // require('./utility')(Sharp); 
-export const Sharp;
- export default sharp;
+
+ 
