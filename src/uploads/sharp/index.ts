@@ -2,12 +2,12 @@
   
  const Sharp = require('./constructor'); 
 // require('./input')(Sharp); 
- require('./resize')(Sharp); 
+ import('./resize').then(m => m(Sharp)); 
  //require('./composite')(Sharp); 
 // require('./operation')(Sharp); 
- require('./colour')(Sharp); 
+ import('./colour').then(m => m(Sharp)); 
 // require('./channel')(Sharp); 
- require('./output')(Sharp); 
+ import('./output').then(m => m(Sharp)); 
 // require('./utility')(Sharp); 
   
- module.exports = Sharp;
+ export default Sharp;
