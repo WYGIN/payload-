@@ -1,6 +1,6 @@
 'use strict'; 
   
- const is = require('./is'); 
+ import is from './is'; 
   
  /** 
   * Weighting to apply when using contain/cover fit. 
@@ -533,7 +533,7 @@
   * Decorate the Sharp prototype with resize-related functions. 
   * @private 
   */ 
- module.exports = function (Sharp) { 
+ export default function (Sharp) { 
    Object.assign(Sharp.prototype, { 
      resize, 
   //   extend, 
