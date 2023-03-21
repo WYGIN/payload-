@@ -5,7 +5,7 @@
  import is from './is'; 
   
 // require('./libvips').hasVendoredLibvips(); 
- import('./sharp'); 
+// import('./sharp'); 
   
  // Use NODE_DEBUG=sharp to enable libvips warnings 
  const debuglog = util.debuglog('sharp'); 
